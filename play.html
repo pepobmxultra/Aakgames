@@ -9,40 +9,40 @@
     <script src="http://code.createjs.com/tweenjs-0.6.1.min.js"></script>
     <script src="http://code.createjs.com/movieclip-0.8.1.min.js"></script>
     <script src="http://code.createjs.com/preloadjs-0.6.1.min.js"></script>
-    <script src="js/Interfaz.js"></script>
+    <script src="Interfaz.js"></script>
     <link rel="shortcut icon" href="Images/icon.png">
     <script>
-      var canvas, stage, exportRoot;
+    var canvas, stage, exportRoot;
 
-      function init() {
-        canvas = document.getElementById("canvas");
-        images = images||{};
-        ss = ss||{};
+    function init() {
+    	canvas = document.getElementById("canvas");
+    	images = images||{};
+    	ss = ss||{};
 
-        var loader = new createjs.LoadQueue(false);
-        loader.addEventListener("fileload", handleFileLoad);
-        loader.addEventListener("complete", handleComplete);
-      loader.loadFile({src:"Images/Interfaz_atlas_.json", type:"spritesheet", id:"Interfaz_atlas_"}, true);
-        loader.loadManifest(lib.properties.manifest);
-      }
+    	var loader = new createjs.LoadQueue(false);
+    	loader.addEventListener("fileload", handleFileLoad);
+    	loader.addEventListener("complete", handleComplete);
+    loader.loadFile({src:"Images/Interfaz_atlas_.json", type:"spritesheet", id:"Interfaz_atlas_"}, true);
+    	loader.loadManifest(lib.properties.manifest);
+    }
 
-      function handleFileLoad(evt) {
-        if (evt.item.type == "image") { images[evt.item.id] = evt.result; }
-      }
+    function handleFileLoad(evt) {
+    	if (evt.item.type == "image") { images[evt.item.id] = evt.result; }
+    }
 
-      function handleComplete(evt) {
-        var queue = evt.target;
-        ss["Interfaz_atlas_"] = queue.getResult("Interfaz_atlas_");
-        exportRoot = new lib.Interfaz();
+    function handleComplete(evt) {
+    	var queue = evt.target;
+    	ss["Interfaz_atlas_"] = queue.getResult("Interfaz_atlas_");
+    	exportRoot = new lib.Interfaz();
 
-        stage = new createjs.Stage(canvas);
-        stage.addChild(exportRoot);
-        stage.update();
-        stage.enableMouseOver();
+    	stage = new createjs.Stage(canvas);
+    	stage.addChild(exportRoot);
+    	stage.update();
+    	stage.enableMouseOver();
 
-        createjs.Ticker.setFPS(lib.properties.fps);
-        createjs.Ticker.addEventListener("tick", stage);
-      }
+    	createjs.Ticker.setFPS(lib.properties.fps);
+    	createjs.Ticker.addEventListener("tick", stage);
+    }
     </script>
     <!-- Bootstrap -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -103,7 +103,7 @@
         </br>
         </br>
         <section>
-          <canvas id="canvas" width="550" height="400" style="background-color:#FFFFFF"></canvas>
+          <canvas id="canvas" width="550" height="400" style="background-color: rgba(0,0,0,0.6); border: 3px solid rgba(0,0,0,0.2);"></canvas>
         </section>
       </br>
       </br>
