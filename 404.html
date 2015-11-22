@@ -4,51 +4,15 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Game</title>
-    <script src="http://code.createjs.com/easeljs-0.8.1.min.js"></script>
-    <script src="http://code.createjs.com/tweenjs-0.6.1.min.js"></script>
-    <script src="http://code.createjs.com/movieclip-0.8.1.min.js"></script>
-    <script src="http://code.createjs.com/preloadjs-0.6.1.min.js"></script>
-    <script src="Interfaz.js"></script>
-    <link rel="shortcut icon" href="Images/icon.png">
-    <script>
-    var canvas, stage, exportRoot;
+    <title>404 ERROR</title>
 
-    function init() {
-    	canvas = document.getElementById("canvas");
-    	images = images||{};
-    	ss = ss||{};
-
-    	var loader = new createjs.LoadQueue(false);
-    	loader.addEventListener("fileload", handleFileLoad);
-    	loader.addEventListener("complete", handleComplete);
-    loader.loadFile({src:"Images/Interfaz_atlas_.json", type:"spritesheet", id:"Interfaz_atlas_"}, true);
-    	loader.loadManifest(lib.properties.manifest);
-    }
-
-    function handleFileLoad(evt) {
-    	if (evt.item.type == "image") { images[evt.item.id] = evt.result; }
-    }
-
-    function handleComplete(evt) {
-    	var queue = evt.target;
-    	ss["Interfaz_atlas_"] = queue.getResult("Interfaz_atlas_");
-    	exportRoot = new lib.Interfaz();
-
-    	stage = new createjs.Stage(canvas);
-    	stage.addChild(exportRoot);
-    	stage.update();
-    	stage.enableMouseOver();
-
-    	createjs.Ticker.setFPS(lib.properties.fps);
-    	createjs.Ticker.addEventListener("tick", stage);
-    }
-    </script>
     <!-- Bootstrap -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="Estilos/Style.css" type="text/css"/>
+    <link rel="shortcut icon" href="Images/icon.png">
+    <meta http-equiv="refresh" content="2;url=./index.html">
   </head>
-  <body onload="init();" style="background-color:#D4D4D4">
+  <body>
     <div id="particles-js"></div>
     <center>
       <section id="Navbar">
@@ -99,15 +63,19 @@
           </div><!-- /.container-fluid -->
         </nav>
       </section>
-        <h1 id="Title">Maik's Pizzeria</h1>
-        </br>
-        </br>
-        <section>
-          <canvas id="canvas" width="550" height="400" style="background-color: rgba(0,0,0,0.6); border: 3px solid rgba(0,0,0,0.2);"></canvas>
-        </section>
-      </br>
-      </br>
-      <div class="bottom" >
+      <section>
+        <div class="container">
+          <div class="form-signin">
+            <div id="panew" class="panel panel-default">
+              <div class="panel-body">
+                <img id="construccion"  src="Images/error404.png" />
+                <h1>La pagina que buscas no existe</h1>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <div class="bottom" style="position: absolute;">
         <section id="pie">
           <nav class="pie pie-inverse">
             <div class="pie-fluid">

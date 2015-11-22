@@ -34,7 +34,7 @@
           }
           if ($var1==$Email) {
             if ($var2==$pass) {
-              header('Location:play.html');
+              header('Location:http://pepobmxultra.github.io/Play');
             }
             else {
               echo "<script> alert('Contraseña incorrecta');</script>";
